@@ -1,0 +1,22 @@
+<%= inspect Map.keys(@socket) %>
+<%= inspect @socket.view %>
+<%= inspect @socket.assigns %>
+
+<header>
+  <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+        <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+          <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8 w-full menu">
+            <%# live_redirect "Home", to: "/", class: if @conn.request_path == "/", do: "active", else: ""
+            live_redirect "Discover", to: "/discover", class: if @conn.request_path == "/discover", do: "active", else: ""
+            live_redirect "About", to: "/about", class: if @conn.request_path == "/about", do: "active", else: ""
+            live_redirect "Contact Us", to: "/contact", class: if @conn.request_path == "/contact", do: "active", else: "" %>
+
+            <%= live_redirect "Home", to: "/", class: if Kernel.inspect(@socket.view) == "DemoWeb.HomeLive", do: "active", else: "1" %>
+            <%= live_redirect "Discover", to: "/discover", class: if Kernel.inspect(@socket.view) == "DemoWeb.DiscoverLive", do: "active", else: "1" %>
+            <%= live_redirect "About", to: "/about", class: if Kernel.inspect(@socket.view) == "DemoWeb.AboutLive", do: "active", else: "1" %>
+            <%= live_redirect "Contact Us", to: "/contact", class: if Kernel.inspect(@socket.view) == "DemoWeb.ContactLive", do: "active", else: "1" %>
+
+          </div>
+        </nav>
+  </div>
+</header>
